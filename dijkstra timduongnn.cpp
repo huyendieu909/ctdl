@@ -44,4 +44,6 @@ int main(){
     cout << "Nhập đỉnh đích: ";
     int d; cin >> d;
     cout << kc[d];
+//nếu muốn có thêm truy vấn để không phải nhập lại thì
+//tạo thêm một biến t rồi dùng vòng while(t--)
 }
