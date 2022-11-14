@@ -1,4 +1,5 @@
 /*dijkstra tìm đường đi ngắn nhất*/
+#define pb push_back
 #define toiuu ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 #include <bits/stdc++.h>
 using namespace std;
