@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define toiuu ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-
 unordered_map<int,int> tree;
 void build(int n){
     for (int i=0;i<n;i++){
@@ -57,34 +56,7 @@ int main(){
 
 
 
-// #include <bits/stdc++.h>
-// using namespace std;
-// #define pb push_back
-// #define mp make_pair
-// #define toiuu ios::sync_with_stdio(false);cin.tie(0);
-// unordered_map<int,int> tree;
-// int query(int l, int r,int n){ //tính trong nửa khoảng [l,r)
-//     int sum = 0;
-//     for (l += n,r += n;l<r;l>>=1,r>>=1){
-//         if (l&1) sum += tree[l++];
-//         if (r&1) sum += tree[--r];
-//     }
-//     return sum;
-// }
-// void build(int &n){
-//     cin >> n;
-//     for (int i=0;i<n;i++){
-//         cin >> tree[i+n];
-//     }
-//     for (int i=n-1;i>0;i--){
-//         tree[i] = tree[i<<1] + tree[i<<1|1];
-//     }
-// }
-// void showTree(int n){
-//     for (int i=1;i<(n<<1);i++){
-//         cout << tree[i] <<" ";
-//     }
-// }
+
 // void modify(int p,int k,int n){
 //     tree[p+n] += k;
 //     for (int i=(p+n)/2;i>=1;i>>=1){
