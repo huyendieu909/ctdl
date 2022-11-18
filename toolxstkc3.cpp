@@ -8,13 +8,14 @@ map<int,int> mapa;
 deque<int> q;
 int main(){
     // toiuu;
+    system("chcp 65001");
     double n;
     int t1,t2;
-    cout << "Nhap so luong gia tri n: ";
+    cout << "Nhập số lượng giá trị n: ";
     cin >> n;
-    cout << "Nhap thoi gian hoc toi thieu: ";
+    cout << "Nhập thời gian học tối thiểu: ";
     cin >> t1;
-    cout << "Nhap thoi gian hoc toi da: ";
+    cout << "Nhập thời gian học tối đa: ";
     cin >> t2;
     t2 = t2 - t1 + 1;
     srand(time(0));
@@ -64,7 +65,21 @@ int main(){
 //tính khoảng cho giá trị trung bình
     cout << "E(x) = ("<<(ex-1.96*(shc/sqrt(n)))<<","<<(ex+1.96*(shc/sqrt(n)))<<")\n";
 //tính khoảng cho tỉ lệ
-    double f = rand() % 100 + 1;
+    int choose;
+    double f;
+    do{
+        cout << "Có random không?\n 1.Có\t\t\t2.Tự nhập\n";
+        cin >> choose;
+    } while(choose != 1 && choose != 2);
+    switch(choose){
+        case 1:
+            f = rand() % 100 + 1;
+            break;
+        case 2:
+            cout << "Nhập vào giá trị của f%(0=>100): ";
+            cin >> f;
+            break;
+    }
     f/=100;
     cout << "f = " << f << "\n";
     cout << "p = ("<<(f-1.96*(sqrt(f*(1-f)/n)))<<","<<(f+1.96*(sqrt(f*(1-f)/n)))<<")\n";
