@@ -20,7 +20,7 @@ int main(){
     srand(time(0));
 //random n 
     for (int i=0;i<n;i++){
-        int x = rand() % t2 + t1; // random 10 số từ 1 đến 10
+        int x = rand() % t2 + t1; // random t2-t1+1 số từ t1 đến t2
         q.pb(x); 
         mapa[x]++;
     }
