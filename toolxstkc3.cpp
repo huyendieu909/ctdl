@@ -42,6 +42,27 @@ int main(){
     for (auto c: mapa){
         cout << "\t"<< c.first << " : " << c.second << "\n";
     }
+//chọn độ tin cậy
+    int g1;
+    double g;
+    do {
+        cout << "Độ tin cậy bao nhiêu?\n1.95%\t\t\t2.98%\t\t\t3.99%\n";
+        cin >> g1;
+    } while (g1!=1&&g1!=2&&g1!=3);
+    switch(g1){
+        case 1:
+            g = 1.96;
+            cout << "g = " << g << "\n";
+            break;
+        case 2:
+            g = 2.33;
+            cout << "g = " << g << "\n";
+            break;
+        case 3: 
+            g = 2.58;
+            cout << "g = " << g << "\n";
+            break;
+    }
 //tính x ngang
     double ex = 0;
     for (auto c: mapa){
@@ -63,7 +84,7 @@ int main(){
     double shc = sqrt(((double)n/(double)(n-1))*s2);
     cout << "s' = " << shc << "\n";    
 //tính khoảng cho giá trị trung bình
-    cout << "E(x) = ("<<(ex-1.96*(shc/sqrt(n)))<<","<<(ex+1.96*(shc/sqrt(n)))<<")\n";
+    cout << "E(x) = ("<<(ex-g*(shc/sqrt(n)))<<","<<(ex+g*(shc/sqrt(n)))<<")\n";
 //tính khoảng cho tỉ lệ
     int choose;
     double f;
@@ -82,5 +103,5 @@ int main(){
     }
     f/=100;
     cout << "f = " << f << "\n";
-    cout << "p = ("<<(f-1.96*(sqrt(f*(1-f)/n)))<<","<<(f+1.96*(sqrt(f*(1-f)/n)))<<")\n";
+    cout << "p = ("<<(f-g*(sqrt(f*(1-f)/n)))<<","<<(f+g*(sqrt(f*(1-f)/n)))<<")\n";
 }
