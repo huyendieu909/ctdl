@@ -48,5 +48,5 @@ int main(){
     cin >> a;
     luaChon(a,s,ss);
     cout << "\n";
-    system("pause");
+    system("pause"); 
 }
