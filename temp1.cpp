@@ -1,7 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
+void selection_sort(int a[], int n){
+    for (int i = 0;i<n-1;i++){
+        int m = i;
+        for (int j = i+1;j<n;j++){
+            if (a[j] > a[m]) m = j;
+        }
+        int temp = a[i];
+        a[i] = a[m];
+        a[m] = temp;
+    }
+}
 int greedy(int a[], int n, int s){
-    sort(a,a+n,greater<>());
+    //sort(a,a+n,greater<>());
+    selection_sort(a,n);
     int i = 0; int p = 0;
     while(i<n && p<=s){
         p+=a[i];
